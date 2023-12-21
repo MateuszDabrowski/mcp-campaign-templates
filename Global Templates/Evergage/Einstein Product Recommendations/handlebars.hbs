@@ -1,0 +1,63 @@
+{{!--
+Global Template: Einstein Product Recommendations
+
+This global template inserts a row of recommended products, based on a selected Einstein Recipe.
+
+Requirements:
+1) Set the content zone(s) to that defined in your Sitemap.
+
+Customizations:
+1) For performance optimization, add an observer selector as a second argument to
+Evergage.DisplayUtils.pageElementLoaded in Clientside Code that waits for the content zone to load into the DOM.
+2) Use .before(html) or .after(html) in Clientside Code to insert the generated HTML content before or after the
+content zone, respectively, instead of replacing the content of the content zone with .html(html).
+3) To support rich text, add the @richText(true) decorator to configuration properties in Serverside Code.
+Handlebars expressions for these properties must be wrapped in three sets of curly braces (e.g. {{{expression}}} ).
+4) Ratings are styled using the current rating value and a maxRatingBound, which is defined in the configuration
+properties in Serverside Code and defaults to 5. If you know that ratings captured in the sitemap are on a scale
+of 5, then there's no need to change this value.
+5) Remove or change the default values for the configuration properties in Serverside Code.
+6) Change the values of aria-label attributes as necessary.
+7) Media query breakpoints can be changed in CSS.
+--}}
+
+<section class="evg-einstein-product-recs" data-evg-campaign-id="{{campaign}}" data-evg-experience-id="{{experience}}"
+    data-evg-user-group="{{userGroup}}" aria-label="Product Recommendations{{#if header}} - {{header}}{{/if}}">
+    <h3 class="evg-header evg-h3">{{header}}</h3>
+    <div class="evg-product-recs">
+        {{#each products}}
+        <article class="evg-product-rec" data-evg-item-id="{{id}}" data-evg-item-type="{{../itemType}}"
+            style="max-width: calc((1 / {{../maximumNumberOfProducts}} * 100%));">
+            <a href="{{attributes.url.value}}">
+                <img class="evg-product-img" src="{{attributes.imageUrl.value}}" alt="{{attributes.name.value}}"/>
+            </a>
+            <div class="evg-product-details">
+                <a class="evg-product-name{{#unless ../nameVisibility}} evg-hide{{/unless}}"
+                href="{{attributes.url.value}}">
+                    {{attributes.name.value}}
+                </a>
+                {{#if attributes.description.value}}
+                <div class="evg-product-description{{#unless ../descriptionVisibility}} evg-hide{{/unless}}">
+                    {{attributes.description.value}}
+                </div>
+                {{/if}}
+                <div class="evg-product-price{{#unless ../priceVisibility}} evg-hide{{/unless}}">
+                    ${{attributes.price.value}}
+                </div>
+                <div class="evg-product-rating{{#unless ../ratingVisibility}} evg-hide{{/unless}}"
+                    aria-label="Rating: {{attributes.rating.value}}">
+                    <div class="evg-star-empty"
+                        eg-ratings="{{#if attributes.rating.value}}{{attributes.rating.value}}{{else}}0{{/if}}"
+                        style="width: auto">
+                        ★★★★★
+                    </div>
+                    <div class="evg-star-fill"
+                        style="width: calc(({{#if attributes.rating.value}}{{attributes.rating.value}}{{else}}0{{/if}} / {{../maxRatingBound}}) * 100%);">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+        </article>
+        {{/each}}
+    </div>
+</section>

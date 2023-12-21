@@ -1,0 +1,42 @@
+{{!--
+Global Template: Infobar with Call-to-Action
+
+This global template places an infobar containing text and a call-to-action button.
+
+There are two default Styles: Dark text for lighter backgrounds or light text on darker backgrounds.
+
+Requirements:
+1) Set the content zone(s) to that defined in your Sitemap. This template assumes a top infobar with the
+name "global_infobar_top_of_page" in Clientside Code for dynamic positioning of the infobar.
+
+Customizations:
+1) As a best practice, set the content zone to "global_infobar_top_of_page" for top infobar and
+"global_infobar_bottom_of_page" for bottom infobar.
+See https://developer.salesforce.com/docs/marketing/personalization/guide/content-zones for recommended names for
+content zones
+mapped via the Sitemap.
+2) Style options can be changed in Serverside Code.
+3) Styling of the Style options can be changed in CSS.
+4) To support rich text, add the @richText(true) decorator to configuration properties in Serverside Code.
+Handlebars expressions for these properties must be wrapped in three sets of curly braces (e.g. {{{expression}}} ).
+5) Remove or change the default values for the configuration properties in Serverside Code.
+6) Change the value of the aria-label attributes as necessary.
+--}}
+
+<div class="{{infobarClass}} {{style.className}}" id="evg-infobar-with-cta" data-evg-campaign-id="{{campaign}}"
+    data-evg-experience-id="{{experience}}" data-evg-user-group="{{userGroup}}"
+    aria-label="Infobar{{#if messageText}} - {{messageText}}{{/if}}" role="alert">
+    <div class="evg-infobar">
+        {{#if messageText}}
+        <p class="evg-message {{style.className}}">
+            {{~messageText~}}
+        </p>
+        {{/if}}
+        {{#if ctaText}}
+        <a class="evg-cta {{style.className}}" href="{{ctaUrl}}">
+            {{~ctaText~}}
+        </a>
+        {{/if}}
+    </div>
+    <button class="evg-btn-dismissal {{style.className}}" data-evg-dismissal aria-label="Close Infobar">&times;</button>
+</div>

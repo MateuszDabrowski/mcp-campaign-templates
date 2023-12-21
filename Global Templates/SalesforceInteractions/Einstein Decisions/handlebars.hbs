@@ -1,0 +1,24 @@
+{{!--
+Global Template: Einstein Decisions
+
+This global template inserts a promotion, chosen by Einstein Decisions.
+
+Requirements:
+1) Einstein Decisions is an Interaction Studio Premium Edition feature and is not available to
+growth edition customers.
+2) Set the content zone(s) to that defined in your Sitemap.
+3) Ensure that you have Feature Engineering set up via the Einstein Decisions tab available in the left-hand
+navigation of the platform. If you encounter issues, please contact your account administrator.
+4) Enable Promotions in the dataset's Catalog Setup.
+5) Create and configure Promotions, either manually or through an ETL.
+
+Customizations:
+1) Remove or change the default value for maxResults in Serverside Code.
+--}}
+
+<div id="mcis-einstein-decisions" data-evg-campaign-id="{{campaign}}" data-evg-experience-id="{{experience}}"
+    data-evg-user-group="{{userGroup}}">
+    <a class="mcis-promotion-link" href="{{url}}" data-evg-item-id="{{id}}" data-evg-item-type="Promotion">
+        <img class="mcis-promotion-img" src="{{imageUrl}}">
+    </a>
+</div>

@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Recommendations Block
+========================================================================== */
+
+.evg-einstein-product-recs {
+    width: 100%;
+    max-width: 1440px;
+    margin: 2rem auto;
+    color: inherit;
+    font-family: inherit;
+}
+
+.evg-einstein-product-recs .evg-product-recs {
+    position: relative;
+    z-index: 2;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+
+    width: auto;
+    height: 100%;
+    padding: 0;
+}
+
+/* ==========================================================================
+   Headers
+========================================================================== */
+
+.evg-einstein-product-recs .evg-h3 {
+    margin: 0 0 .5rem;
+    padding: 0;
+    color: inherit;
+    font-size: 1.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.evg-einstein-product-recs .evg-header {
+    width: 100%;
+    margin: 1rem 0 2rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Individual Product Recommendation
+========================================================================== */
+
+.evg-einstein-product-recs .evg-product-rec {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+
+    width: auto;
+    margin: 0;
+    padding: 0 .5rem;
+    text-align: center;
+}
+
+.evg-einstein-product-recs .evg-product-rec>a,
+.evg-einstein-product-recs .evg-product-rec .evg-product-details {
+    background-color: #fff;
+}
+
+.evg-einstein-product-recs .evg-product-img {
+    width: 80%;
+    height: auto;
+}
+
+.evg-einstein-product-recs .evg-product-details {
+    width: 100%;
+    height: 100%;
+    min-height: 9rem;
+    padding: .5rem;
+}
+
+.evg-einstein-product-recs .evg-product-name {
+    display: block;
+    min-height: 2.5rem;
+    margin: auto auto .25rem;
+    color: #393939;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    text-decoration: none;
+}
+
+.evg-einstein-product-recs .evg-product-description {
+    overflow: hidden;
+    max-height: 2rem;
+    margin: 0 auto;
+    font-size: .85rem;
+    line-height: 1rem;
+}
+
+.evg-einstein-product-recs .evg-product-description,
+.evg-einstein-product-recs .evg-product-price,
+.evg-einstein-product-recs .evg-product-rating {
+    margin-bottom: .5rem;
+}
+
+.evg-einstein-product-recs .evg-product-rating {
+    width: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    text-decoration: none;
+}
+
+.evg-einstein-product-recs .evg-star-empty,
+.evg-einstein-product-recs .evg-star-full {
+    text-align: left;
+    text-decoration: none;
+}
+
+.evg-einstein-product-recs .evg-star-empty {
+    color: #dee3e8;
+    background-color: #fff;
+}
+
+.evg-einstein-product-recs .evg-star-fill {
+    position: relative;
+    overflow: hidden;
+    margin-top: -1.4em;
+    color: #ce763c;
+    background-color: transparent;
+}
+
+/* ==========================================================================
+   Visibility
+========================================================================== */
+
+.evg-einstein-product-recs .evg-hide {
+    visibility: hidden;
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* ==========================================================================
+   Media Queries
+========================================================================== */
+
+@media screen and (max-width: 991px) {
+    .evg-einstein-product-recs .evg-product-recs {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .evg-einstein-product-recs .evg-product-rec {
+        max-width: calc(50% - 1rem) !important;
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .evg-einstein-product-recs .evg-product-recs {
+        max-width: 540px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .evg-einstein-product-recs .evg-product-name {
+        min-height: 3rem;
+    }
+}

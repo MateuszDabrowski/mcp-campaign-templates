@@ -1,0 +1,54 @@
+{{!--
+Global Template: Einstein Content Recommendations
+
+This global template inserts recommended content in a two-column format, based on a selected Einstein Recipe.
+
+Requirements:
+1) Set the content zone(s) to that defined in your Sitemap.
+
+Customizations:
+1) Item type to promote can be changed in Serverside Code (see 'recsConfig').
+2) For performance optimization, add an observer selector as a second argument to
+Evergage.DisplayUtils.pageElementLoaded in Clientside Code that waits for the content zone to load into the DOM.
+3) Use .before(html) or .after(html) in Clientside Code to insert the generated HTML content before or after the
+content zone, respectively, instead of replacing the content of the content zone with .html(html).
+4) To support rich text, add the @richText(true) decorator to configuration properties in Serverside Code.
+Handlebars expressions for these properties must be wrapped in three sets of curly braces (e.g. {{{expression}}} ).
+5) Remove or change the default values for the configuration properties in Serverside Code.
+6) Change the value of the aria-label attribute as necessary.
+7) Media query breakpoints can be changed in CSS.
+--}}
+
+<section class="evg-einstein-content-recs" data-evg-campaign-id="{{campaign}}" data-evg-experience-id="{{experience}}"
+    data-evg-user-group="{{userGroup}}" aria-label="Content Recommendations{{#if header}} - {{header}}{{/if}}">
+    {{#if header}}
+    <h3 class="evg-header evg-h3">
+        {{~header~}}
+    </h3>
+    {{/if}}
+    <div class="evg-content-recs">
+        {{~#each blogs}}
+        <div class="evg-container">
+            <article class="evg-content-rec" data-evg-item-id="{{id}}" data-evg-item-type="{{../itemType}}">
+                <a href="{{attributes.url.value}}">
+                    <img class="evg-content-img" src="{{attributes.imageUrl.value}}" alt="{{attributes.name.value}}"/>
+                </a>
+                <div class="evg-content-details">
+                    {{#if ../nameVisibility}}
+                    <a class="evg-content-title" href="{{attributes.url.value}}">
+                        {{~attributes.name.value~}}
+                    </a>
+                    {{/if}}
+                    {{#if ../descriptionVisibility}}
+                    {{#if attributes.description.value}}
+                    <div class="evg-content-description">
+                        {{~attributes.description.value~}}
+                    </div>
+                    {{/if}}
+                    {{/if}}
+                </div>
+            </article>
+        </div>
+        {{/each~}}
+    </div>
+</section>
