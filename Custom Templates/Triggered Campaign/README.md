@@ -1,0 +1,1 @@
+Slight modification of the [Journey Builder Trigger Global Template](https://github.com/MateuszDabrowski/mcp-campaign-templates/tree/main/Global%20Templates/SalesforceInteractions/Journey%20Builder%20Trigger) with commented out guide for adding custom payload properties that I like to use.

@@ -10,7 +10,7 @@ This folder (will) contain my own templates showcasing various tricks you can le
 
 This folder contains fork of official Global Templates for archiving and inspiration purposes.
 
-It's a permitted direct copy of the [Evergage](https://github.com/MateuszDabrowski/mcp-campaign-templates/tree/main/Global%20Templates/Evergage)/[Salesforce](https://github.com/MateuszDabrowski/mcp-campaign-templates/tree/main/Global%20Templates/SalesforceInteractions) code but it is not maintained in any way by Salesforce.
+It's a permitted direct copy of the [Evergage](https://github.com/MateuszDabrowski/mcp-campaign-templates/tree/main/Global%20Templates/Evergage) / [Salesforce](https://github.com/MateuszDabrowski/mcp-campaign-templates/tree/main/Global%20Templates/SalesforceInteractions) code but it is not maintained in any way by Salesforce.
 
 ----
 
