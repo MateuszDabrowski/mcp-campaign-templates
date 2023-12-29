@@ -1,0 +1,41 @@
+{{!--
+    Global Template: Banner with Call-To-Action
+
+    This global template replaces a banner with a new banner containing a background image and a call-to-action button.
+
+    There are two default Styles: Dark text for lighter backgrounds or light text on darker backgrounds.
+
+    Requirements:
+    1) Set the content zone(s) to that defined in your Sitemap.
+
+    Customizations:
+    1) Style options can be changed in Serverside Code.
+    2) Styling of the Style options, including fallback background color, can be changed in CSS.
+    3) For performance optimization, add an observer selector as a second argument to
+    Evergage.DisplayUtils.pageElementLoaded in Clientside Code that waits for the content zone to load into the DOM.
+    4) Use .before(html) or .after(html) in Clientside Code to render the generated HTML before or after the selected
+    content zone, respectively, instead of replacing the content of the selected content zone.
+    5) To support rich text, add the @richText(true) decorator to configuration properties in Serverside Code.
+    Handlebars expressions for these properties must be wrapped in three sets of curly braces (e.g. {{{expression}}} ).
+    6) Remove or change the default values for the configuration properties in Serverside Code.
+    7) Change the value of the aria-label attributes as necessary.
+    8) Media query breakpoints can be changed in CSS.
+--}}
+
+<div class="evg-banner-with-cta evg-jumbotron {{style.className}}" data-evg-campaign-id="{{campaign}}"
+data-evg-experience-id="{{experience}}" data-evg-user-group="{{userGroup}}"
+aria-label="Banner{{#if header}} - {{header}}{{/if}}" role="banner" style="background-image: url({{imageURL}})">
+    {{#if header}}
+    <h1 class="evg-header evg-h1 evg-display-2 {{style.className}}">
+        {{~header~}}
+    </h1>
+    {{/if}}
+    {{#if subheader}}
+    <h2 class="evg-subheader evg-h2 {{style.className}}">
+        {{~subheader~}}
+    </h2>
+    {{/if}}
+    <a class="evg-cta evg-btn evg-btn-primary evg-btn-lg" href="{{ctaUrl}}" aria-label="{{ctaText}}">
+        {{~ctaText~}}
+    </a>
+</div>

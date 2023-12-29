@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Banner
+========================================================================== */
+
+.evg-banner-with-cta.evg-jumbotron {
+    position: relative;
+    z-index: 2;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    background-size: cover;
+}
+
+/* ==========================================================================
+   Headers
+========================================================================== */
+
+.evg-banner-with-cta .evg-h1,
+.evg-banner-with-cta .evg-h2 {
+    margin: 0 0 .5rem;
+    padding: 0;
+    color: inherit;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.evg-banner-with-cta .evg-h1 {
+    font-size: 2.5rem;
+}
+
+.evg-banner-with-cta .evg-h2 {
+    font-size: 2rem;
+}
+
+.evg-banner-with-cta .evg-display-2 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.evg-banner-with-cta .evg-header,
+.evg-banner-with-cta .evg-subheader {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Call-To-Action Button
+========================================================================== */
+
+.evg-banner-with-cta .evg-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 3rem;
+    color: #215ca0;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.evg-banner-with-cta .evg-btn-lg {
+    padding: .5rem 2rem;
+    font-size: 1.25rem;
+}
+
+.evg-banner-with-cta .evg-btn-primary {
+    border-color: #215ca0;
+    color: #fff;
+    background-color: #215ca0;
+    transition: background-color .15s, color .15s;
+}
+
+.evg-banner-with-cta .evg-btn-primary:hover {
+    border-color: #1c4e88;
+    color: #fff;
+    background-color: #1c4e88;
+}
+
+/* ==========================================================================
+   Style
+========================================================================== */
+
+.evg-banner-with-cta.evg-dark-on-light {
+    background-color: #fff;
+}
+
+.evg-banner-with-cta.evg-light-on-dark {
+    background-color: #343a40;
+}
+
+.evg-banner-with-cta .evg-h1.evg-dark-on-light,
+.evg-banner-with-cta .evg-h2.evg-dark-on-light {
+    color: #343a40;
+}
+
+.evg-banner-with-cta .evg-h1.evg-light-on-dark,
+.evg-banner-with-cta .evg-h2.evg-light-on-dark {
+    color: #fff;
+}
+
+/* ==========================================================================
+   Media Queries
+========================================================================== */
+
+@media screen and (max-width: 991px) {
+    .evg-banner-with-cta .evg-h2 {
+        font-size: 1.5rem;
+    }
+
+    .evg-banner-with-cta .evg-display-2 {
+        font-size: 3.75rem;
+    }
+
+    .evg-banner-with-cta .evg-btn-lg {
+        font-size: 1rem;
+    }
+}

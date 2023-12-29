@@ -1,0 +1,21 @@
+{{!--
+    Global Template: Google Analytics Segment Push
+
+    This global template lets you push one or more segments to the specified Google Analytics dimensions.
+    Any and all segments that match user membership will be set to the Google Analytics dimension provided.
+    When a user matches more than one segment, the segment names will be concatenated into one pipe (|)
+    delimited string (e.g. "Segment 1|Segment 2|Segment 3").
+
+    Note that the template is built to work with the analytics.js tag (https://developers.google.com/analytics/devguides/collection/analyticsjs).
+    If you are using a different tag from Google Analytics, then you will likely need to make adjustments
+    to the Clientside Code.
+
+    Requirements:
+    1) Ensure that the desired segments are available in the dataset.
+
+    Customizations:
+    1) Reconfigure the Google Analytics send method in Clientside Code as necessary.
+    2) Change the delimiter character from pipe ("|") to whatever is needed in Clientside Code.
+--}}
+
+<!-- HTML is not needed for this template -->
