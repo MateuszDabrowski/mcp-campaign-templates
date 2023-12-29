@@ -1,0 +1,54 @@
+{{!--
+    Global Template: Exit Intent Pop-Up
+
+    This global template displays a popup when a user intends to exit the page.
+
+    There are two default Styles: Dark text for lighter backgrounds or light text on darker backgrounds.
+
+    Requirements:
+    1) Set the content zone(s) to that defined in your Sitemap.
+
+    Customizations:
+    1) As a best practice, set the content zone to "global_popup".
+    See https://developer.evergage.com/web-integration/sitemap/contentzones for recommended names for content zones
+    mapped via the Sitemap.
+    2) Style options can be changed in Serverside Code.
+    3) Styling of the Style options, including fallback background color, can be changed in CSS.
+    4) Remove or change the default values for the configuration properties in Serverside Code.
+    5) Once validated, the user's email address will be sent to Interaction Studio and set to the user's
+    emailAddress attribute.
+    6) Media query breakpoints can be changed in CSS.
+    7) To support rich text, add the @richtext(true) decorator to configuration properties in Serverside Code.
+    Handlebars expressions for these properties must be wrapped in three sets of curly braces (e.g. {{{expression}}} ).
+    8) Change the value of the aria-label attributes as necessary.
+--}}
+
+<div id="evg-exit-intent-popup" data-evg-campaign-id="{{campaign}}"
+data-evg-experience-id="{{experience}}" data-evg-user-group="{{userGroup}}" aria-label="Popup{{#if header}} - {{header}}{{/if}}"
+role="dialog" aria-modal="true" aria-hidden="false">
+
+    {{#if lightbox}}
+    <div class="evg-overlay" data-evg-dismissal></div>
+    {{/if}}
+
+    <div class="evg-popup evg-style-bg {{style.className}}" style="background-image:url('{{imageUrl}}')">
+        <div class="evg-main-panel">
+            {{#if header}}
+            <h1 class="evg-header evg-h1 evg-display-4 evg-style-text {{style.className}}">
+                {{{header}}}
+            </h1>
+            {{/if}}
+            {{#if subheader}}
+            <h2 class="evg-subheader evg-h2 evg-style-text {{style.className}}">
+                {{{subheader}}}
+            </h2>
+            {{/if}}
+            <a class="evg-cta evg-btn evg-btn-primary evg-btn-lg {{style.className}}" tabindex="0" href="{{ctaUrl}}"
+            type="button" aria-label="{{ctaText}}">
+                {{~ctaText~}}
+            </a>
+        </div>
+        <button class="evg-btn-dismissal evg-style-color {{style.className}}" data-evg-dismissal
+        aria-label="Close Popup" tabindex="1">&times;</button>
+    </div>
+</div>
