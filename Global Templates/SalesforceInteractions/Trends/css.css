@@ -1,0 +1,10 @@
+#mcis-trends.mcis-trends {
+    opacity: 0;
+    padding: 0 15px;
+    font-style: italic;
+}
+
+#mcis-trends.mcis-trends li {
+    color: #ffa500;
+    list-style-type: none;
+}

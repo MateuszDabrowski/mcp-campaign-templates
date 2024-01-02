@@ -1,0 +1,14 @@
+{{!--
+    Template: Sample Survey Template
+
+    Requirements:
+    1) Surveys are available to all Premium edition customers. If your account was provisioned prior to 4/7/2021, you
+        will need to request a gears refresh for your account from support in order for the Survey gear to show up in
+        your gears list and for the feature functionality to be fully enabled.
+    2) Create at least one Survey in the Survey editor, which can be found in the IS Dashboard.
+
+--}}
+
+<div id="evg-surveys" data-evg-campaign-id="{{campaign}}" data-evg-experience-id="{{experience}}"
+    data-evg-user-group="{{userGroup}}" aria-label="Survey{{#if survey}} - {{survey.name}}{{/if}}">
+</div>
