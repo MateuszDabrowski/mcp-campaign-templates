@@ -4,7 +4,7 @@ This repository is split into two separate sections:
 
 ## 1. Custom Templates
 
-This folder (will) contain my own templates showcasing various tricks you can leverage in building your camapigns as an extension of my [MCP Campaign Templating documentation](https://mateuszdabrowski.pl/docs/category/serverside-code/).
+This folder (will) contain my own templates showcasing various tricks you can leverage in building your camapigns as an extension of my [MCP Campaign Templating documentation](https://mateuszdabrowski.pl/docs/category/-serverside-code/).
 
 ## 2. Global Templates
 
